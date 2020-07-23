@@ -1,0 +1,40 @@
+<section class="cmspage mtb-40">
+  <div class="container">
+    <div class="page-desc">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1 class="text-white">Contact Us</h1>
+          <form #f="ngForm"
+          (ngSubmit)="onSubmit(f)">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control"
+              ngModel
+              #name="ngModel"
+              placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" name="email" class="form-control"
+              ngModel
+              #email="ngModel"
+              placeholder="E-Mail">
+            </div>
+            <div class="form-group">
+              <input type="text" name="phone" class="form-control"
+              ngModel
+              #phone="ngModel" placeholder="Phone">
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5"
+              ngModel
+              #Message="ngModel"
+              class="form-control" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-success">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+      <h3 class="text-white">Register</h3>
+      <form #f="ngForm"
+            (ngSubmit)="onSubmit(f)">
+          <div class="form-group">
+              <label class="text-white" for="UserName">Username</label>
+              <input type="text"
+                     name="UserName"
+                     ngModel
+                     required
+                     #UserName="ngModel"
+                     class="form-control"
+                     id="UserName"
+                     placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label class="text-white" for="FirstName">First Name</label>
+            <input type="text"
+                   name="FirstName"
+                   ngModel
+                   required
+                   #FirstName="ngModel"
+                   class="form-control"
+                   id="FirstName"
+                   placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label class="text-white" for="LastName">Last Name</label>
+          <input type="text"
+                 name="LastName"
+                 ngModel
+                 required
+                 #LastName="ngModel"
+                 class="form-control"
+                 id="LastName"
+                 placeholder="Last Name">
+      </div>
+          <div class="form-group">
+              <label class="text-white" for="Email">Email</label>
+              <input type="email"
+                     name="Email"
+                     ngModel
+                     required
+                     #Email="ngModel"
+                     class="form-control"
+                     id="Email"
+                     placeholder="Enter email"
+                     [pattern]="emailPattern">
+          </div>
+          <div class="form-group">
+              <label class="text-white" for="Password">Password</label>
+              <input type="password"
+                     name="Password"
+                     ngModel
+                     required
+                     #Password="ngModel"
+                     class="form-control"
+                     id="Password"
+                     placeholder="Password">
+          </div>
+          <button type="submit"
+                  [disabled]="f.invalid"
+                  class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button>
+
+                  <!-- <button type="submit"
+                  class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button> -->
+      </form>
+  </div>
+</div>
