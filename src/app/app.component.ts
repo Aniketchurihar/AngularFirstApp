@@ -28,7 +28,7 @@ export class AppComponent {
   numeri = 10;
   public choose ='';
   aniket: boolean = false;
-  title = 'Aniket';
+  title = 'Aniket Churihar';
 
   setValue(drp: any){
     // alert(drp.target.value);
