@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "^10.0.4",
     "@angular/router": "^10.0.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@types/gapi": "0.0.39",
+    "@types/gapi.auth2": "0.0.52",
     "angular-font-awesome": "^3.1.2",
     "angular-particle": "^1.0.4",
     "bootstrap": "^4.5.0",

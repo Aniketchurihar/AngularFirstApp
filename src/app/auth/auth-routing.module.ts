@@ -1,3 +1,4 @@
+import { ColumnOneComponent } from './../shared/layouts/column-one/column-one.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -15,6 +16,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent,canActivate:[AuthGuard] },
   {
     path : 'header' , component : HeaderComponent
+  },
+  {
+    path : 'columnOne' , component : ColumnOneComponent
   },
   // {
   //   path : 'login' , component : LoginComponent
@@ -44,7 +48,9 @@ const routes: Routes = [
 },
 {
   path: 'home', component: HomeComponent,
-  children: [{ path : 'about' , component : AboutComponent }]
+  children: [{ path : 'about' , component : AboutComponent }
+  // ,{ path : 'reset-password' , component : ResetPasswordComponent }
+]
 },
 {
   path: 'home', component: HomeComponent,
@@ -55,6 +61,7 @@ const routes: Routes = [
 //   }
 //   ,
 { path : '', redirectTo:'/header', pathMatch : 'full'},
+// { path : '', redirectTo:'/columnOne', pathMatch : 'full'},
 { path: '**', component: PageNotFoundComponent }
 ];
 

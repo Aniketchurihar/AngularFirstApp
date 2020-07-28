@@ -19,10 +19,34 @@ export class AuthService {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
 
+  // contactForm(formdata: Contact) {
+  //   return this.http.post<Contact>(this.rootUrl + '/api/contact', formdata, this.httpOptions).pipe(
+  //     catchError(this.handleError)
+  //   );
+  // }
+
   contactForm(formdata: Contact) {
-    return this.http.post<Contact>(this.rootUrl + '/api/contact', formdata, this.httpOptions).pipe(
-      catchError(this.handleError)
-    );
+    debugger;
+    const body: Contact = {
+      id : formdata.id,
+      name: formdata.name,
+      email: formdata.email,
+      phone: formdata.phone,
+      message: formdata.message
+    }
+    return this.http.post(this.rootUrl + '/api/User/contact', body);
+  }
+
+
+  registerUser(user : User){
+    const body: User = {
+      UserName: user.UserName,
+      Password: user.Password,
+      Email: user.Email,
+      FirstName: user.FirstName,
+      LastName: user.LastName
+    }
+    return this.http.post(this.rootUrl + '/api/User/Register', body);
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -43,16 +67,6 @@ export class AuthService {
     return throwError(this.errorData);
   }
 
-  registerUser(user : User){
-    const body: User = {
-      UserName: user.UserName,
-      Password: user.Password,
-      Email: user.Email,
-      FirstName: user.FirstName,
-      LastName: user.LastName
-    }
-    return this.http.post(this.rootUrl + '/api/User/Register', body);
-  }
 
   userAuthentication(userName, password) {
     var data = "username=" + userName + "&password=" + password + "&grant_type=password";
